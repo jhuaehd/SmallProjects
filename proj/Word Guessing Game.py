@@ -3,7 +3,7 @@ import random
 words = ['Python', 'Java', 'C++', 'Ruby', 'Nodejs', 'PHP', 'Laravel', 'Reactjs', 'HTML', 'SQL', 'ASP', 'Git']
 
 print(words, "\n")
-print("\nGuess the word from the given list")
+print("\nGuess the word from the given list\n")
 
 hints = ['Snake', 
          'Root crop',
@@ -24,12 +24,13 @@ for word in words:
   word = random.choice(words)
 
 # get the length of a random word
-hint = words.index(word)
-print("Hint:(", hints[hint] + "),Word has",len(word), "characters")
 # get the index to print the hint for the random word
+hint = words.index(word)
+print("Hint:", hints[hint] + ", Word has",len(word), "characters")
+
 
 lives = 5
-print("\nYou have 5 lives to guess, there's also a hint for you to guess faster.\n")
+print("\nYou have 5 lives to guess\n")
 
 # guessing loop according to number of lives
 while lives > 0:
@@ -39,7 +40,7 @@ while lives > 0:
     break
   else:
     lives = lives - 1
-    print("Wrong Guess! You have ", lives, "remaining lives")
+    print("Wrong Guess! You have ", lives, "remaining lives\n")
 
 else:
   print("You lose")
