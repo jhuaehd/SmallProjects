@@ -29,7 +29,7 @@ print("Hint:", hints[hint] + ", Word has",len(word), "characters")
 
 
 lives = 5
-print("\nYou have 5 lives to guess\n")
+print("\nNote: You have 5 lives to guess\n")
 
 # guessing loop according to number of lives
 while lives > 0:
