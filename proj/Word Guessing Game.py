@@ -18,8 +18,7 @@ hints = ['Snake',
          'development framework for building web pages',
          'an Open Source Distributed Version Control System'
         ]
-
-# list the words using for loop
+# list the words using for loop to get char length
 for word in words:
   word = random.choice(words)
 
@@ -41,6 +40,5 @@ while lives > 0:
   else:
     lives = lives - 1
     print("Wrong Guess! You have ", lives, "remaining lives\n")
-
 else:
   print("You lose")
