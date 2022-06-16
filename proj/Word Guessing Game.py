@@ -24,10 +24,9 @@ for word in words:
   word = random.choice(words)
 
 # get the length of a random word
-print("\nWord has ", len(word), "characters")
-# get the index to print the hint for the random word
 hint = words.index(word)
-print("Hint: ", hints[hint])
+print("Hint:(", hints[hint] + "),Word has",len(word), "characters")
+# get the index to print the hint for the random word
 
 lives = 5
 print("\nYou have 5 lives to guess, there's also a hint for you to guess faster.\n")
