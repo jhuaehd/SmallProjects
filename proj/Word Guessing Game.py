@@ -18,15 +18,18 @@ hints = ['Snake',
          'development framework for building web pages',
          'an Open Source Distributed Version Control System'
         ]
+
 # list the words using for loop to get char length
 for word in words:
+  # select random word from words
   word = random.choice(words)
 
 # get the length of a random word
 # get the index to print the hint for the random word
+  
 hint = words.index(word)
-print("Hint:", hints[hint] + ", Word has",len(word), "characters")
 
+print("Hint:", hints[hint] + ", Word has",len(word), "characters") 
 
 lives = 5
 print("\nNote: You have 5 lives to guess\n")
