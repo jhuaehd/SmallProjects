@@ -1,4 +1,5 @@
 import random
+import sys
 import time
 
 words = [
@@ -28,34 +29,26 @@ hint = words.index(word)
 
 print("Hint:", hints[hint] + ", Word has", len(word), "characters")
 
-lives = 5
+guesses = 5
 print("\nNote: You have 5 lives to guess\n")
 
 # guessing loop according to number of lives
-while lives > 0:
+while guesses > 0:
+    userAns = input()
     # timer
-    t = 5
-    while t:
-        mins, secs = divmod(t, 60)
-        timer = '{:02d}:{:02d}'.format(mins, secs)
+    for x in reversed(range(5)):
+        # sys.stdout.write('\r' + str(x) + '\n')
         time.sleep(1)
-        t -= 1
-    # user input
-    userAns = input()
-    if userAns == word:
-        print("Awesome, You won !")
-        break
-    else:
-        lives = lives - 1
-        print("Wrong Guess! You have ", lives, "remaining lives\n")
-    print('Time is up!')
-    # user input
-    userAns = input()
-    if userAns == word:
-        print("Awesome, You won !")
-        break
-    else:
-        lives = lives - 1
-        print("Wrong Guess! You have ", lives, "remaining lives\n")
+
+        # user input
+        if userAns == word:
+            print("Awesome, You won !")
+            break
+
+        else:
+            guesses = guesses - 1
+            pass
+            print("Wrong Guess! You have ", guesses, "remaining lives\n")
+
 else:
     print("You lose")
