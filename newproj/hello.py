@@ -1,19 +1,25 @@
-from flask import Flask, redirect, url_for
-app = Flask(__name__)
+from flask import (
+    Flask, 
+    jsonify
+)
 
-@app.route('/admin')
-def hello_admin():
-   return 'Hello Admin'
+# Function that create the app 
+def create_app(test_config=None ):
+    # create and configure the app
+    app = Flask(__name__)
 
-@app.route('/guest/<guest>')
-def hello_guest(guest):
-   return 'Hello %s as Guest' % guest
-@app.route('/user/<name>')
-def hello_user(name):
-   if name =='admin':
-      return redirect(url_for('hello_admin'))
-   else:
-      return redirect(url_for('hello_guest',guest = name))
+    # Simple route
+    @app.route('/')
+    def hello_world(): 
+        return jsonify({
+           "status": "success",
+            "message": "Hello World!"
+        }) 
+     
+    return app # do not forget to return the app
+
+APP = create_app()
 
 if __name__ == '__main__':
-   app.run(debug = True)
+    # APP.run(host='0.0.0.0', port=5000, debug=True)
+    APP.run(debug=True)
